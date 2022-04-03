@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  
+}
+
+html{
+  background: url(https://i.pinimg.com/564x/0e/c1/dc/0ec1dcc9c5dda39fd76d62fc694dc6a0.jpg)
+}
+
+body{
+  background-color: rgba(11, 11, 11, 0.712);
+  height:100%;
+  width: 100%;
+}
+
