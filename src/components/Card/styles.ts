@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {AiOutlineShoppingCart, AiFillPlusCircle } from "react-icons/ai"
+import {AiOutlineShoppingCart, AiFillPlusCircle } from "react-icons/ai";
 
 export const CardContainer = styled.section`
 
@@ -32,9 +32,13 @@ export const CardContainer = styled.section`
        .info{
            display: flex;
            flex-direction:column;
+           width:100%;
 
-           .titulo{
-                text-align: center;
+           .titulo{ 
+               text-align: center;
+               font-size: 18px;
+               font-weight: 500;
+               color: #bdbfbf;  
            };
 
            .cards{
@@ -53,20 +57,19 @@ export const CardContainer = styled.section`
    };
 
    @media (max-width: 500px) {
-       background-color:#313333;
        display: flex;
        flex-direction: column;
        padding:9px;
        margin-bottom:10px;
        border-radius:10px;
-       width:350px;
-       height: 200px;
-       box-shadow: 0 8px 32px 0 rgba(3, 38, 135, 0.37);
-       margin:20px;
+
+       .container{
+           width:300px;
+       }
 
         img{
-           height:150px;
-           width:140px;
+           height:90px;
+           width:70px;
            border-radius: 10px;
        };
    }

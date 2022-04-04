@@ -3,9 +3,19 @@
     flex-wrap: wrap;
     justify-content: center;
     
-    
-}
+};
 
 .titulo{
     text-align: center;
+};
+
+@media (max-width: 500px) {
+    #container{
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+
+
 }
+

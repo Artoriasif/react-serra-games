@@ -18,8 +18,8 @@ const Card = () => {
                
             </div>
             <div className="sociais">
-                <a href="#"><Linkedin/>Pedro</a>
-                <a href="#"><Linkedin/>Marcos</a>
+                <a href="https://github.com/Artoriasif"><Linkedin/>Pedro</a>
+                <a href="https://github.com/Artoriasif"><Linkedin/>Marcos</a>
             </div>
             <div className="info">2022 © SerraGames</div>
         </Footer>

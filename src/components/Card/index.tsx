@@ -2,34 +2,38 @@ import React from "react";
 import {CardContainer, BuyIcon, InfoIcon, ContainerIcon} from "./styles";
 
 
-export interface GameProps{
-    image: string;
+
+interface GameProps{
     title: string;
+    image: string;
     price: number;
-    genre: string;
+    category: string;
+
 }
 
-const Card = ({image, title, price, genre}: GameProps) => {
+
+
+const Card = ({image, title, price, category}: GameProps) => {
     return(
-            <CardContainer>
-                <div className="container">
-                    <div>
-                        <img src={image} alt="capa do jogo"/>
-                    </div>
-                    <div className="info">
-                        <p className="titulo">{title}</p>
-                        <div className="cards">
-                            <p className="price"><span>R$</span>{price}</p>
-                            <p className="genre">{genre}</p>
-                        </div>    
-                        <ContainerIcon>
-                            <BuyIcon/>
-                            <InfoIcon/>
-                        </ContainerIcon>
-                    </div>
+        <CardContainer>
+            <div className="container">
+                <div>
+                    <img src={image} alt="capa do jogo"/>
                 </div>
-                
-            </CardContainer>
+                <div className="info">
+                    <p className="titulo">{title}</p>
+                    <div className="cards">
+                        <p className="price"><span>R$</span>{price}</p>
+                        <p className="genre">{category}</p>
+
+                    </div> 
+                    <ContainerIcon>
+                        <BuyIcon/>
+                        <InfoIcon/>
+                    </ContainerIcon>
+                </div>
+            </div>    
+        </CardContainer>
         
     )
 }
