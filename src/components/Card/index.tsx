@@ -8,12 +8,13 @@ interface GameProps{
     image: string;
     price: number;
     category: string;
+    platform: string;
 
 }
 
 
 
-const Card = ({image, title, price, category}: GameProps) => {
+const Card = ({image, title, price, category, platform}: GameProps) => {
     return(
         <CardContainer>
             <div className="container">
@@ -23,13 +24,15 @@ const Card = ({image, title, price, category}: GameProps) => {
                 <div className="info">
                     <p className="titulo">{title}</p>
                     <div className="cards">
-                        <p className="price"><span>R$</span>{price}</p>
                         <p className="genre">{category}</p>
-
+                        <p className="platform">{platform}</p>
                     </div> 
                     <ContainerIcon>
-                        <BuyIcon/>
-                        <InfoIcon/>
+                        <p className="price"><span>R$</span>{price}</p>
+                        <div className="icons">
+                            <BuyIcon/>
+                            <InfoIcon/>
+                        </div>         
                     </ContainerIcon>
                 </div>
             </div>    

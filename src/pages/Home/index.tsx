@@ -12,6 +12,7 @@ interface GameListInterface{
     title: string;
     link_image: string;
     price: number;
+    platform: string;
     categories: [
         {
             category: string,
@@ -56,6 +57,7 @@ export const Home: React.FC<indexProps> = () => {
                         title={jogo.title} 
                         image={jogo.link_image} 
                         price={jogo.price}
+                        platform={jogo.platform}
                         category = {jogo.categories[0].category} 
                     />             
                 </section>)}           

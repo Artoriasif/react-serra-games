@@ -33,6 +33,7 @@ export const CardContainer = styled.section`
            display: flex;
            flex-direction:column;
            width:100%;
+           justify-content: space-between;
 
            .titulo{ 
                text-align: center;
@@ -42,19 +43,30 @@ export const CardContainer = styled.section`
            };
 
            .cards{
-               
-
-               .price{
-                
-               };
+               display: flex;
+               justify-content:space-around;
+               flex-wrap: wrap;
+               color: #bdbfbf;
+               font-size:17px;
+               font-weight:500; 
 
                .genre{
-                   
+                   border: 1px solid #bdbfbf;
+                   padding: 4px;
+                   border-radius:15px;
                };
+
+               .platform{
+                   border: 1px solid #bdbfbf;
+                   padding: 4px;
+                   border-radius:15px;
+               }
                
            };
         };     
    };
+
+   
 
    @media (max-width: 500px) {
        display: flex;
@@ -79,7 +91,25 @@ export const CardContainer = styled.section`
 
 export const ContainerIcon = styled.div`
     display: flex;
-    justify-content:flex-end;
+    justify-content:space-around;
+    width:100%;
+
+    .price{
+
+        color: #bdbfbf;
+
+        > span{
+            font-weight:500;
+            margin-right:2px;
+            font-size:18px;
+        }
+    }
+
+    .icons{
+        width:70px;
+        display: flex;
+        justify-content:space-between;
+    }
 `
 
 export const BuyIcon = styled(AiOutlineShoppingCart)`
@@ -87,6 +117,8 @@ export const BuyIcon = styled(AiOutlineShoppingCart)`
     height: 25px;
     color: #bdbfbf;
     cursor:pointer;
+
+    
 `;
 
 
