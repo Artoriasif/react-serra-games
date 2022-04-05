@@ -2,7 +2,7 @@ import React from 'react';
 import {HeaderPage} from "./styles";
 import iconeGame from "../../assets/image/icone-game.png"
 import {AiOutlineSearch} from "react-icons/ai";
-
+import {BsChevronDown} from 'react-icons/bs';
 
 const Header: React.FC = () => {
   return(
@@ -11,21 +11,29 @@ const Header: React.FC = () => {
         <img src={iconeGame} alt="Icone de controle de um video game"/>
         <span>Serra</span>Games
       </div>
-       <div className="buttons">
-        <div className="dropdown">
-          <span>Categorias</span>
-          <div className="dropdown-content">
-            <button>Acao</button>
-            <button>RPG</button>
-            <button>Aventura</button>
-            <button>Corrrida</button>
-            <button>FPS</button>
+
+      <div className="opcoes">
+        <div className="buttons">
+          <div className="dropdown">
+            <span>Categorias<BsChevronDown/></span>
+            <div className="dropdown-content">
+              <ul>
+                <li>Acao</li>
+                <li>Aventura</li>
+                <li>FPS</li>
+                <li>RPG</li>
+                <li>Terror</li>
+                <li>Plataforma</li>
+                <li>Corrida</li>
+                <li>Zombie</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="search">
-        <label><AiOutlineSearch/></label>
-        <input type='text' placeholder='Digite o nome do jogo'/>
+        <div className="search">
+          <label><AiOutlineSearch/></label>
+          <input type='text' placeholder='Digite o nome do jogo'/>
+        </div>
       </div>
     </HeaderPage>
   )
