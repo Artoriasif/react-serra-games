@@ -36,11 +36,7 @@ export const HeaderPage = styled.header`
     }
 
     .opcoes{
-        display: flex;
-        width:450px;
-        justify-content:space-between;
-        flex-wrap: wrap;
-        align-items: center;
+        
            
         .search{
             display: flex;

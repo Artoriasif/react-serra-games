@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Card from "../../components/Card";
 import "./styles.scss";
+import SearchInput from "../../components/Input/SearchInput";
 interface indexProps{
     
 }
@@ -21,16 +22,18 @@ interface GameListInterface{
     ]
 }
 
+const api = "https://jogo-library.herokuapp.com/jogo/"
+
 export const Home: React.FC<indexProps> = () => {
 
     const [jogos, setJogos] = useState<GameListInterface[]>([]);
     const [selectedJogos, setSelectedJogos ] = useState<GameListInterface | undefined>(undefined);
-
+    const [text, setText] = useState("");
     
    useEffect(() => {
        const getJogos = async () => {
            try {
-               const response = await axios.get('https://jogo-library.herokuapp.com/jogo/')
+               const response = await axios.get(`${api}filter?title=${text}`)
                if(response != null){
                     setJogos(response.data.results)
                     console.log("jogos", response.data.results)
@@ -44,12 +47,13 @@ export const Home: React.FC<indexProps> = () => {
        getJogos();
     
         
-   }, [])
+   }, [text])
 
  
     return (
         <>
-            <h1 className="titulo">Lista de Jogos</h1>
+            
+            <SearchInput value={text} onChange={(search:any) => setText(search)} />
             <div id='container'>
                     {jogos.map((jogo) => <section onClick={() => setSelectedJogos(jogo)}>       
                     <Card

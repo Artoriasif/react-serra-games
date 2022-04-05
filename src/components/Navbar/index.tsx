@@ -1,7 +1,6 @@
 import React from 'react';
 import {HeaderPage} from "./styles";
 import iconeGame from "../../assets/image/icone-game.png"
-import {AiOutlineSearch} from "react-icons/ai";
 import {BsChevronDown} from 'react-icons/bs';
 
 const Header: React.FC = () => {
@@ -29,10 +28,6 @@ const Header: React.FC = () => {
               </ul>
             </div>
           </div>
-        </div>
-        <div className="search">
-          <label><AiOutlineSearch/></label>
-          <input type='text' placeholder='Digite o nome do jogo'/>
         </div>
       </div>
     </HeaderPage>
