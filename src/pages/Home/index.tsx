@@ -3,6 +3,7 @@ import axios from 'axios';
 import Card from "../../components/Card";
 import "./styles.scss";
 import SearchInput from "../../components/Input/SearchInput";
+
 interface indexProps{
     
 }
@@ -20,6 +21,7 @@ interface GameListInterface{
             id: number
         }
     ]
+    describe: string;
 }
 
 const api = "https://jogo-library.herokuapp.com/jogo/"
@@ -62,7 +64,8 @@ export const Home: React.FC<indexProps> = () => {
                         image={jogo.link_image} 
                         price={jogo.price}
                         platform={jogo.platform}
-                        category = {jogo.categories[0].category} 
+                        category = {jogo.categories[0].category}
+                        describe={jogo.describe}
                     />             
                 </section>)}           
             </div>

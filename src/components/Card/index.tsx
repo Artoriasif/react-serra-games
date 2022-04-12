@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import {CardContainer, BuyIcon, InfoIcon, ContainerIcon} from "./styles";
+import ReactModal from 'react-modal';
 
-
+ReactModal.setAppElement('#root')
 
 interface GameProps{
     title: string;
@@ -9,12 +10,22 @@ interface GameProps{
     price: number;
     category: string;
     platform: string;
-
+    describe: string;
 }
 
+const Card = ({image, title, price, category, platform, describe}: GameProps) => {
+  
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+     
+    function openModal() {
+    setIsOpen(true);
+    }
 
 
-const Card = ({image, title, price, category, platform}: GameProps) => {
+  function closeModal() {
+    setIsOpen(false);
+  }
+
     return(
         <CardContainer>
             <div className="container">
@@ -31,11 +42,18 @@ const Card = ({image, title, price, category, platform}: GameProps) => {
                         <p className="price"><span>R$</span>{price}</p>
                         <div className="icons">
                             <BuyIcon/>
-                            <InfoIcon/>
-                        </div>         
+                            <button onClick={openModal}> <InfoIcon/> </button>        
+                        </div>    
                     </ContainerIcon>
                 </div>
             </div>    
+            <ReactModal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+            >
+                <h1>teste</h1>
+                <p>{describe}</p>
+            </ReactModal>  
         </CardContainer>
         
     )
