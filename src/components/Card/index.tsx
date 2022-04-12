@@ -48,6 +48,7 @@ const Card = ({image, title, price, category, platform, describe}: GameProps) =>
                 </div>
             </div>    
             <ReactModal
+                className="modal-container"
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
             >
