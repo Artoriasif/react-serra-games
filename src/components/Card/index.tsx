@@ -53,6 +53,7 @@ const Card = ({image, title, price, category, platform, describe}: GameProps) =>
             >
                 <h1>teste</h1>
                 <p>{describe}</p>
+                <h1>teste</h1>
             </ReactModal>  
         </CardContainer>
         
