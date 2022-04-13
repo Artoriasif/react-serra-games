@@ -65,9 +65,8 @@ export const CardContainer = styled.section`
            };
         };     
    };
-
    
-
+   
    @media (max-width: 500px) {
        display: flex;
        flex-direction: column;
@@ -86,8 +85,8 @@ export const CardContainer = styled.section`
        };
    }
    
+   
 `;
-
 
 export const ContainerIcon = styled.div`
     display: flex;
