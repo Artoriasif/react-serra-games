@@ -3,7 +3,7 @@ import axios from 'axios';
 import Card from "../../components/Card";
 import "./styles.scss";
 import SearchInput from "../../components/Input/SearchInput";
-
+import Pagination from "../../Pagination";
 interface indexProps{
     
 }
@@ -11,6 +11,7 @@ interface indexProps{
 
 interface GameListInterface{
     id: number;
+    count: number;
     title: string;
     link_image: string;
     price: number;
@@ -22,6 +23,10 @@ interface GameListInterface{
         }
     ]
     describe: string;
+    
+}
+interface pagesList{
+    count: number;
 }
 
 const api = "https://jogo-library.herokuapp.com/jogo/"
@@ -31,16 +36,17 @@ export const Home: React.FC<indexProps> = () => {
     const [jogos, setJogos] = useState<GameListInterface[]>([]);
     const [selectedJogos, setSelectedJogos ] = useState<GameListInterface | undefined>(undefined);
     const [text, setText] = useState("");
-    
+    const [offset, setOffSet] = useState(0);
+    const [pages, setPages] = useState<pagesList>();
+
    useEffect(() => {
        const getJogos = async () => {
            try {
                const response = await axios.get(`${api}filter?title=${text}`)
                if(response != null){
+                    setPages(response.data.results)
                     setJogos(response.data.results)
-                    console.log("jogos", response.data.results)
-                    // setCategoria(response.data.results.categories.category)
-                    console.log("Teste", response.data.results[0].categories[0].category);
+                    console.log("jogos", response.data)
                }
             }catch (error) {
                console.log(error);
@@ -69,7 +75,14 @@ export const Home: React.FC<indexProps> = () => {
                     />             
                 </section>)}           
             </div>
-            <h2 className="titulo">Jogos selecionado: {selectedJogos?.title || undefined}</h2>
+            {pages?.count &&(
+                  <Pagination
+                  limit={10}
+                  total={pages.count}
+                  offset={offset}
+                  setOffset={setOffSet}
+              />
+            )}
         </>
     );
 };
