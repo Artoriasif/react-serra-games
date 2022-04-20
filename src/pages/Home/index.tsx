@@ -27,7 +27,7 @@ interface GameListInterface{
     
 }
 
-const LIMIT = 50;
+const LIMIT = 9999;
 const api = "https://jogo-library.herokuapp.com/jogo/"
 
 export const Home: React.FC<indexProps> = () => {
@@ -81,7 +81,7 @@ export const Home: React.FC<indexProps> = () => {
             </div>
             <div>
             {Array.from(Array(pages), (jogo, index) => {
-                return <button key={index} value={index} onClick={(event) => setCurrentPage(Number(event.currentTarget.value))}>{index}</button>
+                return <button key={index} value={index} onClick={(event) => setCurrentPage(Number(event.currentTarget.value))}>{index + 1}</button>
             })}
             </div>
 
