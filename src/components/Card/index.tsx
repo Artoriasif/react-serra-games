@@ -1,6 +1,6 @@
 import React from "react";
 import {CardContainer, BuyIcon, InfoIcon, ContainerIcon} from "./styles";
-import ReactModal from 'react-modal';
+import ReactModal from 'react-modal'
 
 ReactModal.setAppElement('#root')
 
