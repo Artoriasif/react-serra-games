@@ -1,5 +1,5 @@
 import React from 'react';
-import {HeaderPage} from "./styles";
+import {HeaderPage} from "./style";
 import iconeGame from "../../assets/image/icone-game.png"
 import {BsChevronDown} from 'react-icons/bs';
 

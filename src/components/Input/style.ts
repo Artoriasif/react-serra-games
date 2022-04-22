@@ -5,7 +5,8 @@ export const SearchContainer = styled.div`
 display: flex;
 justify-content:center;
 width:100%;
-
+margin-top: 100px;
+margin-bottom: 100px;
     .input-container{
         display: flex;
         width:350px; 

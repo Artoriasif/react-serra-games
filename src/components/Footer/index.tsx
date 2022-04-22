@@ -1,11 +1,12 @@
 import React from "react";
-import { Footer, Linkedin } from "./styles";
+import { Footer, Linkedin, ContainerFooter } from "./style";
 import logo from "../../assets/image/icone-game.png";
 
 
 const Card = () => {
     return(
-        <Footer>
+        <ContainerFooter>
+             <Footer>
             <div className="logo">
                 <img src={logo} alt="icone da pagina"/>
             </div>
@@ -23,6 +24,8 @@ const Card = () => {
             </div>
             <div className="info">2022 © SerraGames</div>
         </Footer>
+        </ContainerFooter>
+       
     )
 }
 

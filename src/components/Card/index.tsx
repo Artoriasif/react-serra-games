@@ -1,6 +1,10 @@
 import React from "react";
 import {CardContainer, BuyIcon, InfoIcon, ContainerIcon} from "./styles";
 import ReactModal from 'react-modal'
+import './modal.scss';
+import { AiFillCloseCircle } from "react-icons/ai";
+
+
 
 ReactModal.setAppElement('#root')
 
@@ -11,9 +15,11 @@ interface GameProps{
     category: string;
     platform: string;
     describe: string;
+    storage: number;
+    year: number;
 }
 
-const Card = ({image, title, price, category, platform, describe}: GameProps) => {
+const Card = ({image, title, price, category, platform, describe, storage, year}: GameProps) => {
   
     const [modalIsOpen, setIsOpen] = React.useState(false);
      
@@ -28,6 +34,7 @@ const Card = ({image, title, price, category, platform, describe}: GameProps) =>
 
     return(
         <CardContainer>
+            <div className="posicionamento">
             <div className="container">
                 <div>
                     <img src={image} alt="capa do jogo"/>
@@ -47,55 +54,41 @@ const Card = ({image, title, price, category, platform, describe}: GameProps) =>
                     </ContainerIcon>
                 </div>
             </div>   
-            <div className="modal">
+            <div id="modalContainer">
             <ReactModal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
+                className="Modal"
                 style={{
-                    overlay: {
-                      position: 'fixed',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
+                    overlay:{
                       backgroundColor: 'rgba(17, 17, 17, 0.678)'
-                    },
-                    content: {
-                      display: "flex",
-                      justifyContent: 'space-between',
-                      position: 'absolute',
-                      top: '40px',
-                      left: '40px',
-                      right: '40px',
-                      bottom: '40px',
-                      border: '4px solid #202020',
-                      background: '#474747',
-                      overflow: 'auto',
-                      WebkitOverflowScrolling: 'touch',
-                      borderRadius: '15px',
-                      outline: 'none',
-                      padding: '15px',
-                      width: '1200px',
-                      height: '700px',
                     }
-                  }}
+                }}
                 >
-                <div className="img-modal">
-                    <img style={{width:'500px', height:'660px', borderRadius:'15px', marginRight: '15px'}}src={image} alt="Capa do game"/>
+                <div className="imgModal">
+                    <img src={image} alt="Capa do game"/>
                 </div>
-                <div style={{display:'flex', flexDirection: 'column', justifyContent: 'space-around'}}>
-                    <p style={{textAlign: 'center', fontSize:'30px', fontWeight:'bold',}}>{title}</p>
-                    <div className="infos" style={{display: 'flex', justifyContent: 'space-around', fontSize:'20px'}}>
-                        <p style={{border: '1px solid #000', padding: '5px', borderRadius: '15px'}}>{category}</p>
-                        <p style={{border: '1px solid #000', padding: '5px', borderRadius: '15px'}}>{platform}</p>
-                        <p style={{border: '1px solid #000', padding: '5px', borderRadius: '15px'}}><span style={{fontWeight:'bold'}}>R$</span>{price}</p>
+                <div className="informacoes">
+                    <p className="titulo">{title}</p>
+                    <div className="tags">
+                        <p className="tag">{category}</p>
+                        <p className="tag">{platform}</p>
+                        <p className="tag"><span>R$</span>{price}</p>
                     </div>
-                    <div className="descricao" style={{ background:'#3b3b3b', textAlign:'center', padding:'20px', borderRadius:'15px', fontSize:'18px'}}>
+                    <div className="infoExtra">
+                        <p>O jogo pesa: {storage}GB</p>
+                        <p>Ano de lançamento: {year}</p>
+                    </div>
+                    <div className="descricao">
                         <p>{describe}</p>
                     </div> 
+                    
                 </div> 
+                <button onClick={closeModal}><AiFillCloseCircle size="25" color="white"/></button>
             </ReactModal>     
             </div>
+            </div>
+            
                     
              
         </CardContainer>

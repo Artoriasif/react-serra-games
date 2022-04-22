@@ -1,5 +1,5 @@
 import React from "react";
-import {SearchContainer, IconSearch} from './styles';
+import {SearchContainer, IconSearch} from './style';
 
 const SearchInput = ({ value, onChange }: any) => {
   function handleChange(event:any) {

@@ -2,6 +2,8 @@ import styled from "styled-components";
 import {AiOutlineShoppingCart, AiFillPlusCircle } from "react-icons/ai";
 
 export const CardContainer = styled.section`
+    
+
 
    .container{
        background-color:#313333;

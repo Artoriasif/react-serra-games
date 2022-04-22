@@ -2,6 +2,11 @@ import styled from "styled-components";
 import {AiFillLinkedin} from "react-icons/ai";
 
 
+export const ContainerFooter = styled.section`
+    display: flex;
+    justify-content:flex-end;
+`
+
 export const Footer = styled.footer`
     width: 100%;
     height: 260px;

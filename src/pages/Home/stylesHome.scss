@@ -1,0 +1,50 @@
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+};
+
+.titulo{
+    text-align: center;
+};
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    margin-top: 50px;
+
+    .botao{
+        font-size: 20px;
+        width: 35px;
+        height: 45px;
+        border-radius: 2px;
+        border:1px solid rgb(17, 234, 241);
+        margin-right: 6px;
+        background: none;
+        color: rgb(17, 234, 241);
+        cursor: pointer;
+    }
+    .botao:hover{
+        background-color: rgba(17, 234, 241, 0.774);
+        color: white;
+        transition: 0.2s;
+    }
+
+    .botao:active{
+        background-color: rgb(8, 150, 155);;
+    }
+}
+
+@media (max-width: 500px) {
+    #container{
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+
+
+}
+

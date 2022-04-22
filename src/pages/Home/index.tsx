@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Card from "../../components/Card";
-import "./styles.scss";
+import "./stylesHome.scss";
 import SearchInput from "../../components/Input/SearchInput";
-import { start } from 'repl';
+
 
 interface indexProps{
     
@@ -24,6 +24,8 @@ interface GameListInterface{
         }
     ]
     describe: string;
+    storage: number;
+    year: number;
     
 }
 
@@ -33,7 +35,6 @@ const api = "https://jogo-library.herokuapp.com/jogo/"
 export const Home: React.FC<indexProps> = () => {
 
     const [jogos, setJogos] = useState<GameListInterface[]>([]);
-    const [selectedJogos, setSelectedJogos ] = useState<GameListInterface | undefined>(undefined);
     const [text, setText] = useState("");
     const [itensPerPage, setItensPerPage] = useState(10);
     const [currentPage, setCurrentPage] = useState(0);
@@ -76,12 +77,14 @@ export const Home: React.FC<indexProps> = () => {
                         platform={jogo.platform}
                         category = {jogo.categories[0].category}
                         describe={jogo.describe}
+                        storage= {jogo.storage}
+                        year={jogo.year}
                     />             
                 </section>)}           
             </div>
-            <div>
+            <div className='pagination'>
             {Array.from(Array(pages), (jogo, index) => {
-                return <button key={index} value={index} onClick={(event) => setCurrentPage(Number(event.currentTarget.value))}>{index + 1}</button>
+                return <button className='botao' key={index} value={index} onClick={(event) => setCurrentPage(Number(event.currentTarget.value))}>{index + 1}</button>
             })}
             </div>
 
