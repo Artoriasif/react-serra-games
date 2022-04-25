@@ -22,7 +22,7 @@ const Card = () => {
                 <a href="https://github.com/Artoriasif"><Linkedin/>Pedro</a>
                 <a href="https://github.com/Artoriasif"><Linkedin/>Marcos</a>
             </div>
-            <div className="info">2022 © SerraGames</div>
+      
         </Footer>
         </ContainerFooter>
        

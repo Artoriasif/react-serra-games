@@ -5,6 +5,8 @@ import ReactModal from 'react-modal';
 
 
 export const Reactmodal = styled(ReactModal)`
+margin-top: 10%;
+margin-left: 18%;
 `
 export const CardContainer = styled.section`
     
