@@ -36,7 +36,7 @@ export const Home: React.FC<indexProps> = () => {
 
     const [jogos, setJogos] = useState<GameListInterface[]>([]);
     const [text, setText] = useState("");
-    const [itensPerPage, setItensPerPage] = useState(10);
+    const [itensPerPage, setItensPerPage] = useState(12);
     const [currentPage, setCurrentPage] = useState(0);
 
 

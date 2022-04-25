@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import {AiOutlineShoppingCart, AiFillPlusCircle } from "react-icons/ai";
+import ReactModal from 'react-modal';
 
+
+
+export const Reactmodal = styled(ReactModal)`
+`
 export const CardContainer = styled.section`
     
 
@@ -87,7 +92,11 @@ export const CardContainer = styled.section`
        };
    }
    
-   
+   .modalContainer{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
 `;
 
 export const ContainerIcon = styled.div`

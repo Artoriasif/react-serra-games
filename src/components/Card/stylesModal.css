@@ -1,0 +1,100 @@
+.posicao-modal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Modal{
+    width: 1200px;
+    height: 660px;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-self: center;
+}
+
+.imgModal{
+    display: flex;
+    align-items: center;
+}
+
+.imagem-modal{
+    width: 450px;
+    height: 520px;
+    border-radius: 10px;
+}
+
+.informacoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.tags{
+    color: azure;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.titulo{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.tagControll{
+    display: flex;  
+    justify-content: space-around;
+    font-weight: 500;
+}
+
+.tag{
+    border: 1px solid azure;
+    padding:5px;
+    border-radius: 15px;
+}
+
+.infoExtra{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: azure;
+}
+
+.infoControll{
+    display: flex;
+    justify-content: space-around;
+}
+
+.info{
+    font-size: 20px;
+}
+
+.info-api{
+    font-weight: 500;
+}
+
+.descricao{
+    background-color: rgb(20, 20, 20);
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.botao-posicao{
+    align-self: flex-start;
+}
+
+.botao-modal{
+    background: none;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+}

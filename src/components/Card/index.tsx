@@ -1,12 +1,12 @@
 import React from "react";
-import {CardContainer, BuyIcon, InfoIcon, ContainerIcon} from "./styles";
-import ReactModal from 'react-modal'
-import './modal.scss';
+import {CardContainer, BuyIcon, InfoIcon, ContainerIcon, Reactmodal} from "./styles";
+
+import "./stylesModal.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 
 
 
-ReactModal.setAppElement('#root')
+Reactmodal.setAppElement('#root')
 
 interface GameProps{
     title: string;
@@ -54,8 +54,8 @@ const Card = ({image, title, price, category, platform, describe, storage, year}
                     </ContainerIcon>
                 </div>
             </div>   
-            <div id="modalContainer">
-            <ReactModal
+            {!openModal ? null : <div id="modalContainer">
+            <Reactmodal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 className="Modal"
@@ -66,27 +66,32 @@ const Card = ({image, title, price, category, platform, describe, storage, year}
                 }}
                 >
                 <div className="imgModal">
-                    <img src={image} alt="Capa do game"/>
+                    <img className="imagem-modal" src={image} alt="Capa do game"/>
                 </div>
-                <div className="informacoes">
-                    <p className="titulo">{title}</p>
+                <div className="informacoes"> 
                     <div className="tags">
-                        <p className="tag">{category}</p>
-                        <p className="tag">{platform}</p>
-                        <p className="tag"><span>R$</span>{price}</p>
+                        <p className="titulo">{title}</p>
+                        <div className="tagControll">
+                            <p className="tag">{category}</p>
+                            <p className="tag">{platform}</p>
+                            <p className="tag"><span>R$</span>{price}</p>
+                        </div>
                     </div>
                     <div className="infoExtra">
-                        <p>O jogo pesa: {storage}GB</p>
-                        <p>Ano de lançamento: {year}</p>
-                    </div>
-                    <div className="descricao">
+                        <div className="infoControll">                          
+                            <p className="info">Storage: <span className="info-api">{storage}GB</span></p>
+                            <p className="info">Ano do lançamento: <span className="info-api">{year}</span></p>
+                        </div>
+                        <div className="descricao">
                         <p>{describe}</p>
                     </div> 
-                    
+                    </div>
                 </div> 
-                <button onClick={closeModal}><AiFillCloseCircle size="25" color="white"/></button>
-            </ReactModal>     
-            </div>
+                <div className="botao-posicao">
+                    <button className="botao-modal" onClick={closeModal}><AiFillCloseCircle size="25" color="white"/></button>
+                </div>   
+            </Reactmodal>     
+            </div>}
             </div>
             
                     

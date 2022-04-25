@@ -10,7 +10,7 @@ const Card = () => {
             <div className="logo">
                 <img src={logo} alt="icone da pagina"/>
             </div>
-            <p className="descricao">
+            <p className="descricao-footer">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. In inventore nostrum quidem veritatis, 
                 similique necessitatibus nam numquam eaque dolores qui magni deleniti mollitia rerum cupiditate 
                 molestias perferendis? Repellendus, cupiditate ex.

@@ -24,7 +24,7 @@ export const Footer = styled.footer`
         margin-top:10px;
     }
 
-    .descricao{
+    .descricao-footer{
         text-align: center;
         font-size:17px;
         color: #bdbfbf;
